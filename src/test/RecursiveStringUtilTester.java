@@ -66,21 +66,27 @@ public class RecursiveStringUtilTester {
     @Test
     public void testRemoveAdjacentDuplicatesSimple() {
         String res = RecursiveStringUtil.removeAdjacentDuplicates("parallel");
+        System.out.println(res);
         String expected = "paralel";
+        System.out.println(expected);
         assertTrue("removeAdjacentDuplicates is incorrect", res.equals(expected));
     }
 
     @Test
     public void testRemoveAdjacentDuplicatesNoDuplicates() {
         String res = RecursiveStringUtil.removeAdjacentDuplicates("holidays");
+        System.out.println(res);
         String expected = "holidays";
+        System.out.println(expected);
         assertTrue("removeAdjacentDuplicates is incorrect", res.equals(expected));
     }
 
     @Test
     public void testRemoveAdjacentDuplicatesNonAdjacentDuplicates() {
         String res = RecursiveStringUtil.removeAdjacentDuplicates("racecar");
+        System.out.println(res);
         String expected = "racecar";
+        System.out.println(expected);
         //System.out.println(res);
         assertTrue("removeAdjacentDuplicates is incorrect", res.equals(expected));
     }
@@ -88,7 +94,9 @@ public class RecursiveStringUtilTester {
     @Test
     public void testRemoveAdjacentDuplicatesDifficult() {
         String res = RecursiveStringUtil.removeAdjacentDuplicates("abbyccusgggggt");
+        System.out.println(res);
         String expected = "abycusgt";
+        System.out.println(expected);
         //System.out.println(res);
         assertTrue("removeAdjacentDuplicates is incorrect", res.equals(expected));
     }

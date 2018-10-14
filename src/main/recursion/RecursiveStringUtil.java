@@ -49,11 +49,15 @@ public class RecursiveStringUtil {
      * @return string without adjacent duplicates
      */
     public static String removeAdjacentDuplicates(String str) {
-        String res;
-        if (str.charAt(str.length() - 1) != str.charAt(str.length() - 2)) {
-            res = removeAdjacentDuplicates(str.substring(0, str.length() - 2)) + str.charAt(str.length() - 1);
-        } else {
-            res = removeAdjacentDuplicates(str.substring(0, str.length() - 2));
+        String res = "";
+        if(str.length() ==1) {
+            return str;
+        }
+        if(str.charAt(0) == str.charAt(1) ) {
+            return removeAdjacentDuplicates(str.substring(1));
+        }
+        else {
+            res = str.charAt(0) + removeAdjacentDuplicates(str.substring(1));
         }
         return res;
     }
