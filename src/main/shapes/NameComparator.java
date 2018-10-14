@@ -17,10 +17,7 @@ public class NameComparator implements Comparator<Shape2D>{
 	 */
 	@Override
 	public int compare(Shape2D shape1, Shape2D shape2) {
-		// FILL IN CODE
-
-		return 0; // change
-
+		return shape1.getClass().getSimpleName().compareTo(shape2.getClass().getSimpleName());
 	}
 
 }

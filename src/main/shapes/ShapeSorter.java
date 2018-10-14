@@ -35,8 +35,7 @@ public class ShapeSorter {
 	 *            shapes. Use Collections.sort method.
 	 */
 	public void sortShapes(Comparator<Shape2D> comparator) {
-			// FILL IN CODE
-
+			Collections.sort(shapes.comparator);
 	}
 
 	/**

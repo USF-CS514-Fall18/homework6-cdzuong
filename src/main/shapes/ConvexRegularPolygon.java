@@ -12,8 +12,8 @@ public class ConvexRegularPolygon extends Shape2D {
 	 * @param side length of each side
 	 */
 	public ConvexRegularPolygon(int numSides, double side) {
-		// FILL IN CODE
-
+		this.numSides = numSides;
+		this.side = side;
 	}
 
 	/** Overrides the area method of Shape2D.
@@ -24,9 +24,8 @@ public class ConvexRegularPolygon extends Shape2D {
 	 */
 	@Override
 	public double area() {
-		// FILL IN CODE
-
-		return 0; // change
+		double area = 0.25 * numSides * Math.pow(side, 2) * 1 / (Math.tan(Math.PI / numSides));
+		return area;
 	}
 
 	/** Overrides the perimeter method of Shape2D .
@@ -36,9 +35,7 @@ public class ConvexRegularPolygon extends Shape2D {
 	 */
 	@Override
 	public double perimeter() {
-		// FILL IN CODE
-
-		return 0; // change
-
+		double perim = side * numSides;
+		return perim;
 	}
 }

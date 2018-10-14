@@ -15,9 +15,15 @@ public class AreaComparator implements Comparator<Shape2D> {
 	 */
 	@Override
 	public int compare(Shape2D shape1, Shape2D shape2) {
-		// FILL IN CODE
-
-		return 0; // change
+		if(shape1.area() < shape2.area()) {
+			return 1;
+		}
+		else if(shape1.area() == shape2.area()) {
+			return 0;
+		}
+		else {
+			return -1;
+		}
 	}
 
 }

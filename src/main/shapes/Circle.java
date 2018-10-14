@@ -28,9 +28,8 @@ public class Circle extends Shape2D {
 	 */
 	@Override
 	public double perimeter() {
-		// FILL IN CODE
-
-		return 0; // change
+		double perimeter = 2 * Math.PI * getRadius();
+		return perimeter;
 	}
 
 	/** Overrides the area() method of the
@@ -40,9 +39,8 @@ public class Circle extends Shape2D {
 	 */
 	@Override
 	public double area() {
-		// FILL IN CODE
-
-		return 0; // change
+		double area = Math.PI * Math.pow(getRadius(), 2);
+		return area;
 	}
 	
 }

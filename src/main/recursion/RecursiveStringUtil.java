@@ -15,7 +15,12 @@ public class RecursiveStringUtil {
      * @return true if parentheses in the string are nested correctly
      */
     public static boolean checkNestedParentheses(String nestedParentheses) {
-        // FILL IN CODE
+
+            if (nestedParentheses.charAt(0) == nestedParentheses.charAt(nestedParentheses.length() - 1) && nestedParentheses.length() == 2) {
+                return true;
+            }
+            checkNestedParentheses(nestedParentheses.substring(0, nestedParentheses.length() - 1));
+
 
         return false;
     }
@@ -32,9 +37,14 @@ public class RecursiveStringUtil {
      * @return string without adjacent duplicates
      */
     public static String removeAdjacentDuplicates(String str) {
-        // FILL IN CODE
-
-        return null;
+        String res;
+        if(str.charAt(str.length() - 1) != str.charAt(str.length() - 2)) {
+            res = removeAdjacentDuplicates(str.substring(0, str.length() - 1)) + str.charAt(str.length() - 1);
+        }
+        else {
+            res = removeAdjacentDuplicates(str.substring(0, str.length() - 1));
+        }
+        return res;
     }
 
 }

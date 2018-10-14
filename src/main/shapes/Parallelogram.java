@@ -12,8 +12,9 @@ public class Parallelogram extends Shape2D {
 	 * @param angle smallest between two sides (in radians)
 	 */
 	public Parallelogram(double a, double b, double angle) {
-		// FILL IN CODE
-
+		this.a = a;
+		this.b = b;
+		this.angle = angle;
 	}
 
 	/** Overrides perimeter method of class Shape2D.
@@ -33,9 +34,22 @@ public class Parallelogram extends Shape2D {
 	 */
 	@Override
 	public double area() {
-		// FILL IN CODE
+		double larger;
+		double smaller;
+		if (a > b) {
+			larger = a;
+			smaller = b;
+		}
+		else {
+			larger = b;
+			smaller = a;
+		}
 
-		return 0; // change
+		double width = larger;
+		double height = ((larger - smaller) / 2) * Math.tan(angle);
+		double area = height * width;
+
+		return area;
 	}
 
 }
