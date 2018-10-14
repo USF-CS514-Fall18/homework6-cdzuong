@@ -1,7 +1,9 @@
 package main.recursion;
 
-/** Includes several recursive methods for string processing.
- *  All methods in this class must be recursive and use no loops. */
+/**
+ * Includes several recursive methods for string processing.
+ * All methods in this class must be recursive and use no loops.
+ */
 public class RecursiveStringUtil {
 
     /**
@@ -10,19 +12,28 @@ public class RecursiveStringUtil {
      * No other characters are allowed in the string. Method must be
      * recursive and use no loops.
      * Example: (())) is invalid.
-     *         ((())) is valid
+     * ((())) is valid
+     *
      * @param nestedParentheses string
      * @return true if parentheses in the string are nested correctly
      */
     public static boolean checkNestedParentheses(String nestedParentheses) {
 
-            if (nestedParentheses.charAt(0) == nestedParentheses.charAt(nestedParentheses.length() - 1) && nestedParentheses.length() == 2) {
-                return true;
-            }
-            checkNestedParentheses(nestedParentheses.substring(0, nestedParentheses.length() - 1));
+        if (nestedParentheses.length() == 1) {
+            return false;
+        }
+        if (nestedParentheses.charAt(0) == '(' && nestedParentheses.charAt(1) == ')' && nestedParentheses.length() == 2) {
+            return true;
+        }
+        if (nestedParentheses.length() == 3) {
+            return false;
+        }
+        if (nestedParentheses.charAt(nestedParentheses.length() - 1) != nestedParentheses.charAt(nestedParentheses.length() - 3) && nestedParentheses.length() >= 6){
+            return false;
+        }
 
 
-        return false;
+        return checkNestedParentheses(nestedParentheses.substring(1, nestedParentheses.length() - 1));
     }
 
 
@@ -32,17 +43,17 @@ public class RecursiveStringUtil {
      * characters is left in the string. Method must be recursive
      * and use no loops.
      * Example: if the input is "parallel", the output is "paralel";
-     *          if the input is "abbyccusggggt", the output is "abycusgt"
+     * if the input is "abbyccusggggt", the output is "abycusgt"
+     *
      * @param str string
      * @return string without adjacent duplicates
      */
     public static String removeAdjacentDuplicates(String str) {
         String res;
-        if(str.charAt(str.length() - 1) != str.charAt(str.length() - 2)) {
-            res = removeAdjacentDuplicates(str.substring(0, str.length() - 1)) + str.charAt(str.length() - 1);
-        }
-        else {
-            res = removeAdjacentDuplicates(str.substring(0, str.length() - 1));
+        if (str.charAt(str.length() - 1) != str.charAt(str.length() - 2)) {
+            res = removeAdjacentDuplicates(str.substring(0, str.length() - 2)) + str.charAt(str.length() - 1);
+        } else {
+            res = removeAdjacentDuplicates(str.substring(0, str.length() - 2));
         }
         return res;
     }

@@ -11,7 +11,9 @@ public class RecursiveStringUtilTester {
     @Test
     public void testCheckNestedParenthesesSimpleFalse() {
         boolean res = RecursiveStringUtil.checkNestedParentheses("(");
+        System.out.println(res);
         boolean expected = false;
+        System.out.println(expected);
         assertTrue("checkNestedParentheses returns true for ( which is incorrect", expected == res);
 
     }
@@ -19,35 +21,45 @@ public class RecursiveStringUtilTester {
     @Test
     public void testCheckNestedParenthesesSimpleTrue() {
         boolean res = RecursiveStringUtil.checkNestedParentheses("()");
+        System.out.println(res);
         boolean expected = true;
+        System.out.println(expected);
         assertTrue("checkNestedParentheses returns false for () which is incorrect", expected == res);
     }
 
     @Test
     public void testCheckNestedParenthesesMediumTrue() {
         boolean res = RecursiveStringUtil.checkNestedParentheses("((()))");
+        System.out.println(res);
         boolean expected = true;
+        System.out.println(expected);
         assertTrue("checkNestedParentheses returns false for ((())) which is incorrect", expected == res);
     }
 
     @Test
     public void testCheckNestedParenthesesMediumFalse() {
         boolean res = RecursiveStringUtil.checkNestedParentheses("((())");
+        System.out.println(res);
         boolean expected = false;
+        System.out.println(expected);
         assertTrue("checkNestedParentheses returns true for ((()) which is incorrect", expected == res);
     }
 
     @Test
     public void testCheckNestedParenthesesLongerFalse() {
         boolean res = RecursiveStringUtil.checkNestedParentheses("(()(())())");
+        System.out.println(res);
         boolean expected = false;
+        System.out.println(expected);
         assertTrue("checkNestedParentheses returns true for (()(())()) which is incorrect", expected == res);
     }
 
     @Test
     public void testCheckNestedParenthesesLongerTrue() {
         boolean res = RecursiveStringUtil.checkNestedParentheses("((((((((()))))))))");
+        System.out.println(res);
         boolean expected = true;
+        System.out.println(expected);
         assertTrue("checkNestedParentheses returns false for ((((((((())))))))) which is incorrect", expected == res);
     }
 
