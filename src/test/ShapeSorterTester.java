@@ -121,6 +121,7 @@ public class ShapeSorterTester {
 
         sorter.sortShapes( new PerimeterComparator());
         String res = sorter.toString().trim();
+        System.out.println(res);
         //System.out.println(res);
         String expected1 = "Circle" + "\t" + df.format(3.14) + "\t" + df.format(6.28) +";";
         String expected2 = "ConvexRegularPolygon" + "\t" + df.format(6.25) + "\t" + df.format(10.00) +";";
@@ -131,6 +132,7 @@ public class ShapeSorterTester {
         String expected = expected1 + System.lineSeparator() + expected2
                 + System.lineSeparator() + expected3 + System.lineSeparator() + expected4 + System.lineSeparator() + expected5 +
                 System.lineSeparator() + expected6;
+        System.out.println(expected);
         res = res.trim();
         //System.out.println(expected);
         /*System.out.println(res.length() + "; " + expected.length());
@@ -177,6 +179,7 @@ public class ShapeSorterTester {
 
         sorter.sortShapes( new NameComparator());
         String res = sorter.toString().trim();
+        System.out.println("mine");
         System.out.println(res);
         String expected1 = "Circle" + "\t" + df.format(45.36) + "\t" + df.format(23.88) +";";
         String expected2 = "ConvexRegularPolygon" + "\t" + df.format(6.25) + "\t" + df.format(10.00) +";";
@@ -184,6 +187,7 @@ public class ShapeSorterTester {
         String expected = expected1 + System.lineSeparator() + expected2
                 + System.lineSeparator() + expected3;
         res = res.trim();
+        System.out.println(expected);
         assertTrue("ShapeSorter does not correctly sort by name", res.equals(expected));
     }
 }

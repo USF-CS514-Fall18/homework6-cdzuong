@@ -23,9 +23,9 @@ public class Parallelogram extends Shape2D {
 	 */
 	@Override
 	public double perimeter() {
-		// FILL IN CODE
+		double perimeter = 2 * (a + b);
 
-		return 0; //change
+		return perimeter; //change
 	}
 
 	/** Overrides the area method of Shape2D.
@@ -46,7 +46,7 @@ public class Parallelogram extends Shape2D {
 		}
 
 		double width = larger;
-		double height = ((larger - smaller) / 2) * Math.tan(angle);
+		double height = smaller * Math.sin(angle);
 		double area = height * width;
 
 		return area;
